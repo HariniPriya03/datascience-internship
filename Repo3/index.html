@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Score Predictor</title>
+</head>
+<body>
+    <h1>Predict Student Score Based on Study Hours</h1>
+
+    <form method="POST" action="/predict">
+        <label for="hours">Enter hours studied:</label>
+        <input type="text" id="hours" name="hours" required placeholder="e.g. 5.5" />
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if predicted_score is not none %}
+        <h2>Predicted Score: {{ predicted_score }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
